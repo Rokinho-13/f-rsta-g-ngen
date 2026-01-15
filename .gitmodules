@@ -1,0 +1,3 @@
+[submodule "claude-code-pm-course"]
+	path = claude-code-pm-course
+	url = https://github.com/carlvellotti/claude-code-pm-course.git
