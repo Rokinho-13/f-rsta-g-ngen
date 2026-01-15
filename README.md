@@ -4,13 +4,28 @@
 
 ### PowerShell (Windows)
 
-You can install using PowerShell with a single command:
+#### Quick Install (inspect script first)
+
+```powershell
+# Download the script
+irm https://claude.ai/install.ps1 -OutFile install.ps1
+
+# Inspect the script before running
+notepad install.ps1
+
+# Execute after verification
+.\install.ps1
+```
+
+#### One-line Install (advanced users only)
+
+For advanced users who trust the source, you can use:
 
 ```powershell
 irm https://claude.ai/install.ps1 | iex
 ```
 
-This command downloads and executes the installation script directly from the Claude website.
+**Warning:** This downloads and executes code directly. Only use if you trust the source.
 
 ### Alternative Methods
 
@@ -22,9 +37,28 @@ This command downloads and executes the installation script directly from the Cl
 
 #### Linux/macOS
 
+**Recommended:** Download and inspect before running:
+
+```bash
+# Download the script
+curl -fsSL https://claude.ai/install.sh -o install.sh
+
+# Inspect the script
+cat install.sh
+# or use your preferred editor: nano install.sh, vim install.sh, etc.
+
+# Make executable and run after verification
+chmod +x install.sh
+./install.sh
+```
+
+**One-line install (advanced users only):**
+
 ```bash
 curl -fsSL https://claude.ai/install.sh | sh
 ```
+
+**Warning:** This downloads and executes code directly. Only use if you trust the source.
 
 ## Getting Started
 
