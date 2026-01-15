@@ -26,6 +26,39 @@ This command downloads and executes the installation script directly from the Cl
 curl -fsSL https://claude.ai/install.sh | sh
 ```
 
+## Home Directory Setup
+
+This repository includes dotfiles and a setup script to configure your home directory with useful defaults.
+
+### Quick Setup
+
+Run the setup script to configure your home directory:
+
+```bash
+./setup-home.sh
+```
+
+This will:
+- Create `~/.local/bin` and `~/.config` directories
+- Symlink `.bashrc` with useful aliases (including `c` for `claude`)
+- Symlink `.gitconfig` with sensible defaults
+
+### Manual Setup
+
+You can also copy files manually:
+
+```bash
+cp dotfiles/.bashrc ~/.bashrc
+cp dotfiles/.gitconfig ~/.gitconfig
+```
+
+Remember to update `.gitconfig` with your name and email:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
 ## Getting Started
 
 After installation, you can start using Claude Code by opening your terminal and running:

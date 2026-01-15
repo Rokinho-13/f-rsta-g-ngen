@@ -1,0 +1,44 @@
+# ~/.gitconfig - Git configuration file
+# Part of f-rsta-g-ngen home directory setup
+# Replace placeholders with your actual information
+
+[user]
+    name = Your Name
+    email = your.email@example.com
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = vim
+    autocrlf = input
+    whitespace = fix
+
+[color]
+    ui = auto
+
+[pull]
+    rebase = false
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    lg = log --oneline --graph --decorate -10
+    amend = commit --amend --no-edit
+
+[diff]
+    colorMoved = zebra
+
+[merge]
+    conflictstyle = diff3
+
+[fetch]
+    prune = true
