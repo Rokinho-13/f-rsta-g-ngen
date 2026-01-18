@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurangjouren - Din livsmedelsgrossist sedan 1989</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #1a5c3a;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #8fbc8f;
+        }
+
+        .header-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .delivery-info {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .delivery-info .time {
+            font-size: 18px;
+            font-weight: bold;
+            color: #90EE90;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-login {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background: white;
+            color: #1a5c3a;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+            border: 2px solid #ff6b35;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background: #e55a2b;
+        }
+
+        /* Navigation */
+        nav {
+            background: #145230;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Search Bar */
+        .search-section {
+            background: #f5f5f5;
+            padding: 30px 20px;
+        }
+
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .search-box {
+            display: flex;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 18px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-box button {
+            padding: 18px 30px;
+            background: #1a5c3a;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-box button:hover {
+            background: #145230;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a5c3a 0%, #2d8a5e 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero .btn-primary {
+            font-size: 18px;
+            padding: 15px 40px;
+        }
+
+        /* USP Section */
+        .usp-section {
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .usp-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .usp-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            transition: transform 0.3s;
+        }
+
+        .usp-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .usp-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .usp-card h3 {
+            color: #1a5c3a;
+            margin-bottom: 10px;
+        }
+
+        /* Kategorier */
+        .categories {
+            padding: 50px 20px;
+            background: #f5f5f5;
+        }
+
+        .categories h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a5c3a;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+
+        .category-card .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* Kampanj Banner */
+        .campaign-banner {
+            background: #ff6b35;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .campaign-banner h2 {
+            margin-bottom: 10px;
+        }
+
+        .campaign-banner .btn {
+            background: white;
+            color: #ff6b35;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: #8fbc8f;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        /* CTA för nya kunder */
+        .cta-new-customer {
+            background: #fff8f0;
+            border: 2px solid #ff6b35;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .cta-new-customer h2 {
+            color: #1a5c3a;
+            margin-bottom: 15px;
+        }
+
+        .cta-new-customer p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">Restaurang<span>jouren</span></div>
+
+            <div class="header-info">
+                <div class="delivery-info">
+                    <small>Sista beställning om</small>
+                    <div class="time">12 tim 50 min</div>
+                    <small>Leverans: 2026-01-20</small>
+                </div>
+
+                <div class="header-buttons">
+                    <a href="/logga-in" class="btn btn-login">Logga in</a>
+                    <a href="/bli-kund" class="btn btn-primary">Bli kund</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="/produkter">Alla produkter</a></li>
+            <li><a href="/kampanjer">Kampanjer</a></li>
+            <li><a href="/nyheter">Nyheter</a></li>
+            <li><a href="/leverans">Leverans</a></li>
+            <li><a href="/om-oss">Om oss</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sökfält -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Sök bland 3000+ produkter...">
+                <button>Sök</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Din livsmedelsgrossist sedan 1989</h1>
+        <p>Över 3000 produkter från hela världen. Leverans nästa arbetsdag till Storstockholm, Uppsala och Gotland.</p>
+        <a href="/bli-kund" class="btn btn-primary">Bli kund idag - kostnadsfritt!</a>
+    </section>
+
+    <!-- USP Section -->
+    <section class="usp-section">
+        <div class="usp-container">
+            <div class="usp-card">
+                <div class="usp-icon">📦</div>
+                <h3>3000+ produkter</h3>
+                <p>Stort sortiment av delikatesser från hela världen, alltid i lager.</p>
+            </div>
+            <div class="usp-card">
+                <div class="usp-icon">🚚</div>
+                <h3>Snabb leverans</h3>
+                <p>Beställ före 17:00 - få leverans nästa arbetsdag.</p>
+            </div>
+            <div class="usp-card">
+                <div class="usp-icon">💰</div>
+                <h3>Konkurrenskraftiga priser</h3>
+                <p>Grossistpriser anpassade för restaurang och storkök.</p>
+            </div>
+            <div class="usp-card">
+                <div class="usp-icon">⭐</div>
+                <h3>35 års erfarenhet</h3>
+                <p>Pålitlig partner för restauranger sedan 1989.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kampanj Banner -->
+    <section class="campaign-banner">
+        <h2>Veckans kampanj!</h2>
+        <p>Spara upp till 25% på utvalda italienska produkter</p>
+        <a href="/kampanjer" class="btn">Se alla kampanjer</a>
+    </section>
+
+    <!-- Kategorier -->
+    <section class="categories">
+        <h2>Populära kategorier</h2>
+        <div class="category-grid">
+            <a href="/kott" class="category-card">
+                <div class="icon">🥩</div>
+                <h3>Kött & Chark</h3>
+            </a>
+            <a href="/fisk" class="category-card">
+                <div class="icon">🐟</div>
+                <h3>Fisk & Skaldjur</h3>
+            </a>
+            <a href="/mejeri" class="category-card">
+                <div class="icon">🧀</div>
+                <h3>Mejeri & Ost</h3>
+            </a>
+            <a href="/pasta" class="category-card">
+                <div class="icon">🍝</div>
+                <h3>Pasta & Ris</h3>
+            </a>
+            <a href="/drycker" class="category-card">
+                <div class="icon">🥤</div>
+                <h3>Drycker</h3>
+            </a>
+            <a href="/skafferi" class="category-card">
+                <div class="icon">🫒</div>
+                <h3>Skafferi</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA för nya kunder -->
+    <section class="cta-new-customer">
+        <h2>Ny kund? Kom igång på 2 minuter!</h2>
+        <p>Skapa ett kostnadsfritt konto och få tillgång till vårt kompletta sortiment med grossistpriser. Ingen bindningstid.</p>
+        <a href="/bli-kund" class="btn btn-primary">Skapa konto</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontakta oss</h3>
+                <p><strong>Telefon:</strong> 010-682 01 00</p>
+                <p><strong>E-post:</strong> info@restaurangjouren.se</p>
+                <p><strong>Kundtjänst:</strong> Mån-Fre 08:00-17:00</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Leveransområden</h3>
+                <a href="/leverans">Storstockholm</a>
+                <a href="/leverans">Uppsala</a>
+                <a href="/leverans">Gotland</a>
+                <a href="/leverans">Leveransvillkor</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Snabblänkar</h3>
+                <a href="/produkter">Alla produkter</a>
+                <a href="/kampanjer">Aktuella kampanjer</a>
+                <a href="/nyheter">Nyheter</a>
+                <a href="/faq">Vanliga frågor (FAQ)</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Om Restaurangjouren</h3>
+                <p>Din livsmedelsgrossist sedan 1989. Vi levererar delikatesser från hela världen till restauranger, caféer och storkök.</p>
+                <p style="margin-top: 15px;">
+                    <strong>Adress:</strong><br>
+                    Rörvägen 60<br>
+                    136 50 Jordbro
+                </p>
+                <p><small>Org.nr: 556460-7736</small></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Restaurangjouren i Sverige AB. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
