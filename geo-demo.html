@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GEO-konsult som hjälper företag synas i ChatGPT, Perplexity och andra AI-sökmotorer. Öka din synlighet med 40% genom Generative Engine Optimization.">
+    <title>GEO-Konsult - Optimering för AI-Sökmotorer | ChatGPT & Perplexity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        header .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-intro {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .hero-intro p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #2d3748;
+        }
+
+        .hero-intro strong {
+            color: #667eea;
+        }
+
+        .qa-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .qa-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .qa-section h2 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .qa-section h2::before {
+            content: "❓";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .qa-section p {
+            font-size: 1.1em;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .answer-direct {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .answer-direct strong {
+            color: #234e52;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .stat-box .number {
+            font-size: 3em;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-box .label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .cta {
+            background: #48bb78;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+        }
+
+        .cta h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #48bb78;
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .services {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .services h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .services ul {
+            list-style: none;
+        }
+
+        .services li {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .services li::before {
+            content: "✓ ";
+            color: #48bb78;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #718096;
+            margin-top: 50px;
+        }
+
+        .highlight {
+            background: #fef5e7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header .tagline {
+                font-size: 1.1em;
+            }
+
+            .stat-box .number {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 GEO-Konsult</h1>
+            <p class="tagline">Hjälper företag synas i ChatGPT, Perplexity & AI-sökmotorer</p>
+        </header>
+
+        <!-- TEKNIK 1: DIREKTA SVAR I FÖRSTA 2 MENINGARNA -->
+        <div class="hero-intro">
+            <p><strong>GEO (Generative Engine Optimization) hjälper ditt företag synas i AI-sökmotorer som ChatGPT och Perplexity.</strong> Studier visar att företag som optimerar för AI ökar sin synlighet med 40% jämfört med traditionell SEO.</p>
+            <p style="margin-top: 15px;">Med 25% minskning i traditionell söktrafik till 2026 (Gartner) är det avgörande att anpassa sig nu. Jag hjälper dig att bli citerad när potentiella kunder frågar AI-verktyg om din bransch.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span class="number">25%</span>
+                <span class="label">Minskning i Google-trafik 2026</span>
+            </div>
+            <div class="stat-box">
+                <span class="number">40%</span>
+                <span class="label">Ökad synlighet med GEO</span>
+            </div>
+            <div class="stat-box">
+                <span class="number">3-6</span>
+                <span class="label">Månader till resultat</span>
+            </div>
+        </div>
+
+        <!-- TEKNIK 2: Q&A-FORMAT -->
+        <div class="qa-section">
+            <h2>Vad är GEO?</h2>
+            <div class="answer-direct">
+                <p><strong>GEO (Generative Engine Optimization) är optimering för AI-sökmotorer som ChatGPT, Perplexity och Claude.</strong> Istället för att ranka på Google, fokuserar GEO på att bli citerad när människor ställer frågor till AI-verktyg.</p>
+            </div>
+            <p>Traditionell SEO handlar om att hamna högst på Google. GEO handlar om att bli källan AI-verktygen citerar när de svarar på frågor. När någon frågar "Vilken byrå hjälper med digital marknadsföring i Stockholm?" vill du att AI nämner dig.</p>
+        </div>
+
+        <div class="qa-section">
+            <h2>Varför behöver mitt företag GEO just nu?</h2>
+            <div class="answer-direct">
+                <p><strong>Eftersom 25% av din potentiella trafik kommer från AI-verktyg 2026 istället för Google.</strong> Företag som optimerar nu får 6-12 månaders försprång mot konkurrenter.</p>
+            </div>
+            <p>Gartner förutspår att traditionell söktrafik minskar med 25% till 2026. Dina kunder använder redan ChatGPT, Perplexity och Claude för att hitta lösningar. Om du inte är optimerad för dessa verktyg, citeras dina konkurrenter istället.</p>
+        </div>
+
+        <div class="qa-section">
+            <h2>Hur lång tid tar det att se resultat från GEO?</h2>
+            <div class="answer-direct">
+                <p><strong>De flesta företag ser mätbara förbättringar inom 3-6 månader.</strong> Tekniska optimeringar ger effekt inom veckor, medan auktoritetsbyggande tar 6-12 månader.</p>
+            </div>
+            <p>Snabba vinster som AI-crawler-åtkomst kan ge resultat på 2-3 veckor. Mer omfattande strategier som innehållsoptimering och varumärkesauktoritet kräver längre tid men ger varaktig effekt. Jag skapar en stegvis plan anpassad efter dina mål och budget.</p>
+        </div>
+
+        <div class="qa-section">
+            <h2>Vad kostar GEO-konsulttjänster?</h2>
+            <div class="answer-direct">
+                <p><strong>GEO-konsulttjänster kostar mellan 15 000-50 000 kr/månad beroende på omfattning.</strong> En grundläggande GEO-audit kostar 8 000-15 000 kr som engångsbetalning.</p>
+            </div>
+            <p>Prissättningen beror på ditt företags storlek och mål. En grundaudit identifierar förbättringsområden. Löpande optimering inkluderar innehållsstrategi, teknisk implementation och månadsrapporter. Jag erbjuder flexibla paket för både startups och etablerade företag.</p>
+        </div>
+
+        <div class="qa-section">
+            <h2>Vilka AI-sökmotorer bör jag optimera för?</h2>
+            <div class="answer-direct">
+                <p><strong>Prioritera ChatGPT, Perplexity och Google Gemini - dessa har störst användarantal 2026.</strong> Claude och SearchGPT är också viktiga beroende på din målgrupp.</p>
+            </div>
+            <p>ChatGPT leder med över 200 miljoner användare. Perplexity växer snabbast inom B2B-segmentet. Google Gemini integreras i Android och Chrome. Jag analyserar var din målgrupp söker och prioriterar optimering efter ROI.</p>
+        </div>
+
+        <div class="qa-section">
+            <h2>Skiljer sig GEO från traditionell SEO?</h2>
+            <div class="answer-direct">
+                <p><strong>Ja, GEO fokuserar på att bli citerad av AI istället för att ranka på Google.</strong> GEO kräver kortare svar (75-300 ord), Q&A-format och AI-crawler-åtkomst.</p>
+            </div>
+            <p>Traditionell SEO optimerar för sökmotorranking med nyckelord och backlinks. GEO optimerar för AI-citerbarhet med strukturerad data, konversationellt språk och faktabaserade svar. Du behöver båda - SEO för Google, GEO för AI-verktyg. De kompletterar varandra.</p>
+        </div>
+
+        <div class="services">
+            <h2>🎯 Vad jag erbjuder:</h2>
+            <ul>
+                <li>GEO-audit av din nuvarande webbplats (8 000 kr)</li>
+                <li>AI-crawler-optimering (robots.txt, schema markup)</li>
+                <li>Innehållsoptimering i Q&A-format</li>
+                <li>Konkurrensanalys - vem citeras i din bransch?</li>
+                <li>Månadsrapporter med AI-synlighet</li>
+                <li>Utbildning för ditt innehållsteam</li>
+            </ul>
+        </div>
+
+        <div class="cta">
+            <h2>Redo att synas i AI-sökmotorer?</h2>
+            <p>Boka en kostnadsfri 30-minuters konsultation där vi går igenom din nuvarande synlighet i ChatGPT och Perplexity.</p>
+            <a href="mailto:kontakt@geo-konsult.se" class="cta-button">Boka gratis konsultation</a>
+        </div>
+
+        <footer>
+            <p><strong>GEO-Konsult</strong> | Optimering för AI-sökmotorer</p>
+            <p>kontakt@geo-konsult.se</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Denna webbplats är optimerad för ChatGPT, Perplexity, Claude och Google Gemini</p>
+        </footer>
+    </div>
+</body>
+</html>

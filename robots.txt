@@ -1,0 +1,43 @@
+# Robots.txt för GEO-optimerad webbplats
+# Tillåter alla AI-sökmotorer att indexera innehållet
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Google Gemini & Bard
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Common Crawl (används av många AI-modeller)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Traditionella sökmotorer
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Standardregel - tillåt alla
+User-agent: *
+Allow: /
+
+# Sitemap (lägg till din sitemap-URL här)
+# Sitemap: https://dinwebbplats.se/sitemap.xml
